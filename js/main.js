@@ -21,9 +21,9 @@ window.addEventListener("DOMContentLoaded", function () {
   displayMenuItems(filteredProducts);
   displayMenuButtons();
 });
- function displayMenuItems(menuItems) {
+function displayMenuItems(menuItems) {
   let displayMenu = menuItems.map(function (item) {
-return `<div class="col-6 col-md-4">
+    return `<div class="col-6 col-md-4">
 <div class="card mouse h-100 p-4">
   <div class="card-body text-center">
     <img
@@ -59,11 +59,9 @@ return `<div class="col-6 col-md-4">
 </div>
 </div>
 `;
-    
   });
   displayMenu = displayMenu.join("");
   sectionCenter.innerHTML = displayMenu;
-  
 }
 
 function displayMenuButtons() {
@@ -108,11 +106,11 @@ function displayMenuButtons() {
 }
 
 // Search
-searchInput.addEventListener("input", function() {
+searchInput.addEventListener("input", function () {
   const searchTerm = searchInput.value.toLowerCase().trim();
   const products = sectionCenter.getElementsByClassName("card");
 
-  Array.from(products).forEach(function(product) {
+  Array.from(products).forEach(function (product) {
     if (product.textContent.toLowerCase().includes(searchTerm)) {
       product.style.display = "block";
     } else {
